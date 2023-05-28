@@ -1,0 +1,15 @@
+<!-- templates/social_app/connection_profile.html -->
+
+<h2>Connection Profile</h2>
+<h3>All Connections</h3>
+{% for connection in connections %}
+    <p>{{ connection.from_user.name }} connected to {{ connection.to_user.name }}</p>
+{% empty %}
+    <p>No connections.</p>
+{% endfor %}
+<h3>Mutual Connections</h3>
+{% for connection in mutual_connections %}
+    <p>{{ connection.from_user.name }} connected to {{ connection.to_user.name }}</p>
+{% empty %}
+    <p>No mutual connections.</p>
+{% endfor %}

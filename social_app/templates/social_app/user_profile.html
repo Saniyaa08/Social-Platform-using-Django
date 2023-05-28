@@ -1,0 +1,8 @@
+<!-- templates/social_app/user_profile.html -->
+
+<h2>User Profile</h2>
+{% for user in connected_users %}
+    <p>{{ user.name }}</p>
+{% empty %}
+    <p>No connected users.</p>
+{% endfor %}

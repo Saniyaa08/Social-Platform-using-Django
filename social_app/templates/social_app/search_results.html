@@ -1,0 +1,12 @@
+<!-- templates/social_app/search_results.html -->
+
+{% for user in users %}
+    <h3>{{ user.name }}</h3>
+    {% if user in request.user.connections.all %}
+        <p>Already Connected</p>
+    {% else %}
+        <a href="{% url 'connect' user_id=user.id %}">Add Connection</a>
+    {% endif %}
+{% empty %}
+    <p>No users found.</p>
+{% endfor %}

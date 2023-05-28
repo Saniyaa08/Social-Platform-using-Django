@@ -1,0 +1,11 @@
+<!-- templates/social_app/create_post.html -->
+
+<form method="POST" action="{% url 'create_post' %}">
+    {% csrf_token %}
+    <textarea name="content" rows="4" cols="50"></textarea>
+    <select name="visibility">
+        <option value="public">Public</option>
+        <option value="private">Private</option>
+    </select>
+    <button type="submit">Create Post</button>
+</form>
